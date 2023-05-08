@@ -189,14 +189,6 @@ echo on
 adb -s %serial% shell pm clear %pkg_name%
 if %choice% equ 2 (
   rem adb -s %serial% shell pm clear com.android.vending
-  if %pkg_name% equ com.recorder.video.magic.capture.gameplay (
-    adb -s %serial% shell pm clear com.android.vending
-    adb -s %serial% shell am start com.android.vending/com.android.vending.AssetBrowserActivity
-    adb -s %serial% shell rm -r /sdcard/CaptureScreenRecorder/.subs)
-  if %pkg_name% equ qr.code.barcode.maker.scanner.reader (
-    adb -s %serial% shell rm -r /sdcard/ScannerReader/.subs)
-  if %pkg_name% equ com.jb.screenrecorder.screen.record.video (
-    adb -s %serial% shell rm -r /sdcard/GOScreenRecorder/.subs)
   rem adb -s %serial% shell am start com.android.vending/com.android.vending.AssetBrowserActivity
 )
 @echo off
